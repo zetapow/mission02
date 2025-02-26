@@ -1,0 +1,21 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+container {
+   width: min(768px, 88%);
+   height: 100dvh;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+   aspect-ratio: 16/9;
+   object-fit: cover;
+}
+
+h1 {
+   font-size: clamp(1.5rem, 10vw, 5rem);
+}
