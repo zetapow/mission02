@@ -3,9 +3,16 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="css/style.css" />
       <script src="javascript/script.js" defer></script>
-      <title>Bees 'R' Us</title>
+      <link rel="stylesheet" href="css/style.css" />
+      <!-- Favicon and fonts -->
+      <link rel="shortcut icon" href="images/bee.png" type="image/x-icon" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap"
+         rel="stylesheet" />
+      <title>Buzzy Bees</title>
    </head>
    <body>
       <header>
@@ -14,12 +21,48 @@
          </nav>
       </header>
       <main>
-         <section>
-            <h1>Bees 'R' Us</h1>
-            hero
+         <section class="hero">
+            <h1 id="hero-text">Un<span class="hero">bee</span>-lievable!</h1>
+            <button>Buzz Off!</button>
          </section>
-         <section>section</section>
-         <p>main</p>
+         <section>About</section>
+         <section>Bees</section>
+         <section>
+            <h2>BEE calculator</h2>
+            <h3>Basal Energy Expenditure</h3>
+            <form action="#" method="get" class="bee-form">
+               <label for="age">Age:</label>
+               <input
+                  type="number"
+                  name="age"
+                  id="age"
+                  placeholder="25"
+                  required />
+               <p>Sex:</p>
+               <input type="radio" name="sex" id="male" value="male" checked />
+               <label for="male">Male</label>
+               <input type="radio" name="sex" id="female" value="female" />
+               <label for="female">Female</label>
+               <label for="height">Height (cm)</label>
+               <input
+                  type="number"
+                  name="height"
+                  id="height"
+                  placeholder="180"
+                  required />
+               <label for="weight">Weight (kg)</label>
+               <input
+                  type="number"
+                  name="weight"
+                  id="weight"
+                  placeholder="80"
+                  required />
+               <input type="button" value="calculate" name="calculate" />
+
+               <h3>Result</h3>
+               <b>BMR = <span id="result">423423</span> Kilojoules per day</b>
+            </form>
+         </section>
       </main>
       <footer>
          <p>footer</p>

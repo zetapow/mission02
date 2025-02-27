@@ -2,6 +2,20 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: 'Poppins';
+}
+
+/* Setting colour variables */
+:root {
+   --med-brown: #805711;
+   --australien: #cc9918;
+   --broiled-flounder: #ffe087;
+   --black-feather: #0c2626;
+   --dark-black: #121212;
+   --med-black: #1b1b1b;
+   --black: #2a2a2a;
+   --dark-grey: #727272;
+   --selective-yellow: #ffb800;
 }
 
 container {
@@ -16,6 +30,17 @@ img {
    object-fit: cover;
 }
 
-h1 {
+#hero-text {
    font-size: clamp(1.5rem, 10vw, 5rem);
+   font-family: 'Odibee Sans';
+   text-align: center;
+}
+
+.hero span {
+   color: var(--dark-grey);
+}
+
+.hero {
+   background-color: var(--broiled-flounder);
+   color: var(--black-feather);
 }
