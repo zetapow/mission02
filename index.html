@@ -31,18 +31,27 @@
             <h2>BEE calculator</h2>
             <h3>Basal Energy Expenditure</h3>
             <form action="#" method="get" class="bee-form">
-               <label for="age">Age:</label>
-               <input
-                  type="number"
-                  name="age"
-                  id="age"
-                  placeholder="25"
-                  required />
-               <p>Sex:</p>
-               <input type="radio" name="sex" id="male" value="male" checked />
-               <label for="male">Male</label>
-               <input type="radio" name="sex" id="female" value="female" />
-               <label for="female">Female</label>
+               <fieldset>
+                  Sex:
+                  <input
+                     type="radio"
+                     name="sex"
+                     id="male"
+                     value="male"
+                     checked />
+                  <label for="male">Male</label>
+                  <input type="radio" name="sex" id="female" value="female" />
+                  <label for="female">Female</label>
+                  <br />
+                  <label for="age">Age:</label>
+                  <input
+                     type="number"
+                     name="age"
+                     id="age"
+                     placeholder="25"
+                     required />
+               </fieldset>
+
                <label for="height">Height (cm)</label>
                <input
                   type="number"

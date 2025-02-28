@@ -18,54 +18,61 @@ const countObject = {
 countObject.init();
 */
 
-// function sumNumbers() {
-//    const number1 = parseFloat(num1.value);
-//    const number2 = parseFloat(num2.value);
-
-//    if (isNaN(number1) || isNaN(number2)) {
-//       alert('Please enter a valid number');
-//       num1.value = '';
-//       num2.value = '';
-//    } else {
-//       const sum = number1 + number2;
-//       result.innerHTML = `${number1} + ${number2} = ${sum}`;
-//       // clear numbers after sum
-//       num1.value = '';
-//       num2.value = '';
-//    }
-// }
-
-const getHeight = document.querySelector("input[name='height'");
-const getWeight = document.querySelector("input[name='weight'");
-const getAge = document.querySelector("input[name='age'");
-const getMale = document.querySelector("input[value='male'");
-const getFemale = document.querySelector("input[value='female'");
+/*  Assign DOM Elements to variables*/
+const getHeight = document.querySelector("input[name='height']");
+const getWeight = document.querySelector("input[name='weight']");
+const getAge = document.querySelector("input[name='age']");
+const getMale = document.querySelector("input[value='male']");
+const getFemale = document.querySelector("input[value='female']");
 const calc = document.querySelector('input[value="calculate"]');
 const result = document.querySelector('#result');
 
-const displayResult = (event) => {
-   const inputString = event.target.value;
-   // result.textContent = inputString.length;
-   result.textContent = 'hello';
-};
+/* Based on Harris-Benedict Equation http://www-users.med.cornell.edu/~spon/picu/calc/beecalc.htm */
+function calcBee() {
+   /* Values required for calculation */
+   const age = parseInt(getAge.value);
+   const height = parseFloat(getHeight.value);
+   const weight = parseFloat(getWeight.value);
+   const gender = getMale.value ? 'male' : 'female';
 
-function calcBee(event) {
-   // do stuff
-   console.log(event);
-   console.log(event.target.value);
+   /* Calculate BEE based on gender */
+   let BEE = 0;
+   if (gender === 'male') {
+      const WEIGHT_CONST_KG = 13.75;
+      const HEIGHT_CONST_CM = 5.003;
+      const AGE_CONST = 6.775;
+      BEE =
+         66.5 +
+         WEIGHT_CONST_KG * weight +
+         HEIGHT_CONST_CM * height -
+         AGE_CONST * age;
+   } else {
+      const WEIGHT_CONST_KG = 9.563;
+      const HEIGHT_CONST_CM = 1.85;
+      const AGE_CONST = 4.676;
+      BEE =
+         655.1 +
+         WEIGHT_CONST_KG * weight +
+         HEIGHT_CONST_CM * height -
+         AGE_CONST * age;
+   }
+   return BEE;
 }
-const beeEquation = {
-   current: 0,
+
+const displayResult = () => {
+   const beeResult = calcBee().toFixed(2);
+   result.textContent = beeResult;
+   console.log(getMale.checked);
 };
 
 calc.addEventListener('click', displayResult);
-getHeight.addEventListener('input', calcBee);
-getWeight.addEventListener('input', calcBee);
-getMale.addEventListener('input', calcBee);
-getFemale.addEventListener('input', calcBee);
-getAge.addEventListener('input', calcBee);
-result.addEventListener('input', calcBee);
+getHeight.addEventListener('input', displayResult);
+getWeight.addEventListener('input', displayResult);
+getMale.addEventListener('input', displayResult);
+getFemale.addEventListener('input', displayResult);
+getAge.addEventListener('input', displayResult);
 
+/* -------- Bee species array --------- */
 const beeSpeciesNZ = [
    {
       scientificName: 'Apis mellifera',
