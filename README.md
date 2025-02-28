@@ -4,19 +4,29 @@ Develop a one-page personal website using HTML, CSS, and JavaScript to show and 
 
 ## Roadmap
 
--  Additional browser support
+-  Hero section
 
--  Add more integrations
+-  Smooth scrolling
+
+-  Dark mode support
+
+-  Git good
+
+-  Address skill issues
 
 ## Lessons Learned
 
 What did you learn while building this project? What challenges did you face and how did you overcome them?
 
+-  Don't get sick
+-  Consistency in spacing and colours
+-  Get content first
+
 ## Acknowledgements
 
--  [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
--  [Awesome README](https://github.com/matiassingers/awesome-readme)
--  [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+-
+-
+-
 
 ## Authors
 

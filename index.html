@@ -16,18 +16,24 @@
    </head>
    <body>
       <header>
-         <nav>
-            <p>navbar</p>
+         <nav id="navbar">
+            <ul>
+               <li><a href="#about">About</a></li>
+               <li><a href="#bees">Bees</a></li>
+               <li><a href="#calculator">Calculator</a></li>
+            </ul>
          </nav>
       </header>
       <main>
          <section class="hero">
             <h1 id="hero-text">Un<span class="hero">bee</span>-lievable!</h1>
-            <button>Buzz Off!</button>
+            <!-- <img id="follow-mouse" src="images/bee-fav.png" alt="bee" /> -->
+            <!-- <button id="remove-bee">Buzz Off!</button> -->
          </section>
-         <section>About</section>
-         <section>Bees</section>
-         <section>
+         <section id="about">About</section>
+         <section id="bees">Bees</section>
+
+         <section id="calculator">
             <h2>BEE calculator</h2>
             <h3>Basal Energy Expenditure</h3>
             <form action="#" method="get" class="bee-form">
@@ -42,15 +48,17 @@
                   <label for="male">Male</label>
                   <input type="radio" name="sex" id="female" value="female" />
                   <label for="female">Female</label>
-                  <br />
                   <label for="age">Age:</label>
                   <input
                      type="number"
                      name="age"
                      id="age"
                      placeholder="25"
+                     min="5"
+                     max="120"
                      required />
                </fieldset>
+               <!-- Verified oldest people 122 (woman) and 116 (man) https://en.wikipedia.org/wiki/List_of_the_verified_oldest_people -->
 
                <label for="height">Height (cm)</label>
                <input
@@ -58,6 +66,7 @@
                   name="height"
                   id="height"
                   placeholder="180"
+                  min="20"
                   required />
                <label for="weight">Weight (kg)</label>
                <input
@@ -65,16 +74,21 @@
                   name="weight"
                   id="weight"
                   placeholder="80"
+                  min="5"
                   required />
                <input type="button" value="calculate" name="calculate" />
+               <input type="button" value="reset" name="reset" />
 
                <h3>Result</h3>
-               <b>BMR = <span id="result">423423</span> Kilojoules per day</b>
+               <b
+                  >Your Basal Energy Expenditure (BEE) is =
+                  <span id="result"></span> Kilojoules per day</b
+               >
             </form>
          </section>
       </main>
       <footer>
-         <p>footer</p>
+         <img src="images/bee-movie-stinger.avif" alt="" />
       </footer>
    </body>
 </html>

@@ -16,11 +16,39 @@
    --black: #2a2a2a;
    --dark-grey: #727272;
    --selective-yellow: #ffb800;
+   --milk: #fdfff5;
 }
 
-container {
-   width: min(768px, 88%);
-   height: 100dvh;
+#navbar {
+   background-color: var(--black-feather);
+
+   ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      padding: 1em;
+      list-style: none;
+      text-align: right;
+      text-decoration: none;
+      right: 0;
+      top: 0;
+   }
+
+   a {
+      color: var(--milk);
+   }
+}
+
+body {
+   background-color: var(--milk);
+   /* width: min(768px, 88%);
+   height: 100dvh; */
+   /* margin: min(0.5em, 1em, 2.5em); */
+   /* padding: min(0.5em, 1em, 2.5em); */
+}
+
+section {
+   /* margin: min(1em, 1em, 2.5em); */
 }
 
 img {
@@ -43,4 +71,12 @@ img {
 .hero {
    background-color: var(--broiled-flounder);
    color: var(--black-feather);
+}
+
+#follow-mouse {
+   position: absolute;
+   pointer-events: none;
+   width: 3em;
+   height: 3em;
+   transition: transform 5s ease-in-out;
 }
