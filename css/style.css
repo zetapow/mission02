@@ -17,6 +17,7 @@ body {
    --clr-dark: #0c2626;
    --clr-accent: #ffb800;
    --clr-text-light: #fdfff5;
+   --rgb-white: 255, 255, 255;
    /*
    --australien: #cc9918;
    --dark-black: #121212;
@@ -32,7 +33,7 @@ body {
    position: fixed;
    top: 0;
    background-color: var(--clr-primary);
-   height: 3rem;
+   height: 2rem;
    z-index: 999;
    width: 100%;
 }
@@ -46,11 +47,11 @@ body {
       justify-content: center;
       color: var(--clr-primary);
       text-decoration: none;
-      padding: 1.5rem;
+      padding: 1rem;
    }
 
    a {
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: right;
       text-decoration: none;
       color: var(--clr-text-light);
@@ -84,9 +85,10 @@ img {
 
 /* Hero section */
 .hero {
+   margin-top: 1em;
    background-image: url(../images/honeycomb.jpg);
    background-size: cover;
-   background-color: rgb(255, 255, 255, 0.9);
+   background-color: rgb(var(--rgb-white), 0.9);
    background-blend-mode: lighten;
 
    color: var(--clr-dark);
@@ -108,6 +110,10 @@ img {
       margin-bottom: 4rem;
       background-color: var(--clr-text-light);
    }
+}
+
+#hero {
+   background-color: rgba(var(--rgb-white), 0);
 }
 
 /* Form styling */
@@ -134,7 +140,7 @@ form {
       width: auto;
       font-size: medium;
       font-weight: bold;
-      padding: 2% 2%;
+      padding: 1.5% 1.5%;
       border: none;
       border-radius: 25%;
       cursor: pointer;
@@ -173,7 +179,7 @@ form {
    color: var(--clr-text-light);
    border: none;
    border-radius: 50%;
-   padding: 2rem 2rem;
+   padding: 1.5rem 1.5rem;
    cursor: pointer;
 }
 
@@ -186,6 +192,7 @@ form {
    height: auto;
    margin: 0 20px;
    border: 2px solid var(--clr-primary);
+   transition: 500ms;
 }
 
 #image-name {
@@ -197,7 +204,7 @@ form {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
-   gap: 10px;
+   gap: 1rem;
 }
 
 .thumbnail {
@@ -217,5 +224,17 @@ footer {
    img {
       max-height: 10rem;
       border-radius: 50%;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .arrow {
+      border-radius: 50%;
+      padding: 1rem 1rem;
+      cursor: pointer;
+   }
+
+   #selected-image:hover {
+      transform: scale(1.75);
    }
 }
