@@ -1,0 +1,72 @@
+Real-World Analogy
+OOP like baking cookies:
+
+Class = Cookie cutter (shape and size).
+
+Object = Actual cookie (you can decorate it uniquely).
+
+Methods = Actions (bake, frost, eat).
+
+Inheritance = A snowman-shaped cutter extending a basic circle cutter.
+
+// -------------- Objects and classes
+// Class = Blueprint for dogs
+class Dog {
+  constructor(name) {
+    this.name = name; // Property: holds data
+  }
+
+  // Method: an action the object can do
+  woof() {
+    console.log(`${this.name} says: Woof Woof!`);
+  }
+}
+
+// Object = Instance of Bird
+const max = new Bird("Max");
+max.chirp(); // "Max says: Woof Woof!"
+
+
+// ---------------- Encapsulation
+// group related properties and methods
+class BankAccount {
+  constructor(balance = 0) {
+    this.balance = balance;
+  }
+
+  deposit(amount) {
+    this.balance += amount;
+  }
+
+  withdraw(amount) {
+    if (amount <= this.balance) this.balance -= amount;
+  }
+}
+
+const account = new BankAccount(100);
+
+account.deposit(50); // Balance is now 150
+
+
+// ---------------- Inheritance
+//Create new class that inherits properties/ methods from another class
+
+
+class smallDog extends Dog {
+  swim() {
+    console.log(`${this.name} paddles in the water.`);
+  }
+}
+
+
+// ---------------- Polymorphism
+// let child overide parent behaviour
+
+class Wolf extends Dog {
+  woof() {
+    console.log(`${this.name} says: GRRRRRRR!`);
+  }
+}
+
+const wildWolf = new Woof("Unknown");
+wildWolf.woof(); // Overridden method: "Unknown says: GRRRRRRR!"

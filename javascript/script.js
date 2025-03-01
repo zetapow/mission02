@@ -72,16 +72,20 @@ const beeSpeciesNZ = [
    },
 ];
 
-// beeSpeciesNZ.forEach((bee) => {
-//    const beeInfo = document.createElement('div');
-//    beeInfo.innerHTML = `
-//       <h3>${bee.commonName}</h3>
-//       <img src='${bee.src}'></img>
-//       <p>${bee.fact}</p>
-//       <p>${bee.pun}</p>
-//    `;
-//    document.body.appendChild(beeInfo);
-// });
+/* ----------  Bee gallery ---------------------*/
+
+const gallery = [
+   { src: 'images/bee1.jpeg', name: 'Image 1' },
+   { src: 'images/bee2.jpeg', name: 'Image 2' },
+   { src: 'images/bee3.jpeg', name: 'Image 3' },
+   { src: 'images/bee4.jpeg', name: 'Image 4' },
+   { src: 'images/bee5.jpeg', name: 'Image 5' },
+   { src: 'images/bee6.jpeg', name: 'Image 6' },
+   { src: 'images/bee7.jpeg', name: 'Image 7' },
+   { src: 'images/bee9.jpeg', name: 'Image 9' },
+   { src: 'images/bee10.jpeg', name: 'Image 10' },
+   { src: 'images/bee11.jpeg', name: 'Image 11' },
+];
 
 const elements = {
    height: "input[name='height']",
@@ -203,20 +207,24 @@ document.querySelectorAll(elements.anchor).forEach((anchor) => {
    });
 });
 
-/* ----------  Bee gallery ---------------------*/
+/*   Class attempt to handle multiple arrays  */
+/*
+class ArrayManager {
+   constructor(arrayData, elements) {
+      this.array = arrayData;
+      this.currentIndex = 0;
 
-const gallery = [
-   { src: 'images/bee1.jpeg', name: 'Image 1' },
-   { src: 'images/bee2.jpeg', name: 'Image 2' },
-   { src: 'images/bee3.jpeg', name: 'Image 3' },
-   { src: 'images/bee4.jpeg', name: 'Image 4' },
-   { src: 'images/bee5.jpeg', name: 'Image 5' },
-   { src: 'images/bee6.jpeg', name: 'Image 6' },
-   { src: 'images/bee7.jpeg', name: 'Image 7' },
-   { src: 'images/bee9.jpeg', name: 'Image 9' },
-   { src: 'images/bee10.jpeg', name: 'Image 10' },
-   { src: 'images/bee11.jpeg', name: 'Image 11' },
-];
+      this.elements = {
+         selectedImage: elements.selectedImage,
+         imageName: elements.imageName,
+         leftArrow: elements.leftArrow,
+         rightArrow: elements.rightArrow,
+         thumbnails: elements.thumbnails,
+      };
+   }
+}
+*/
+
 let currentIndex = 0;
 
 // get elements by id for selected-Image, image-name, left-arrow and right arrow
@@ -275,3 +283,14 @@ thumbnails.forEach((thumbnail, index) => {
 const ADVANCE_DELAY = 3000;
 setInterval(nextImage, ADVANCE_DELAY);
 */
+
+// beeSpeciesNZ.forEach((bee) => {
+//    const beeInfo = document.createElement('div');
+//    beeInfo.innerHTML = `
+//       <h3>${bee.commonName}</h3>
+//       <img src='${bee.src}'></img>
+//       <p>${bee.fact}</p>
+//       <p>${bee.pun}</p>
+//    `;
+//    document.body.appendChild(beeInfo);
+// });
