@@ -1,32 +1,27 @@
 # Mission 02
 
-Develop a one-page personal website using HTML, CSS, and JavaScript to show and understanding of web development practices.
+Develop a one-page personal website using HTML, CSS, and JavaScript to show an understanding of web development practices.
 
 ## Roadmap
 
--  Hero section
-
 -  Smooth scrolling
-
 -  Dark mode support
-
--  Git good
-
--  Address skill issues
+-  Git good (tbc)
+-  Address skill issues (tbc)
 
 ## Lessons Learned
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
 -  Don't get sick
--  Consistency in spacing and colours
--  Get content first
+-  Consistency in spacing and colours. Use variables
+-  Figure out framework and content before styling
+-  Focus on getting one item working at a time
 
 ## Acknowledgements
 
--  [@JordanMeijer](https://github.com/JordanMeijer/)
--  [@bonne-bonne](https://github.com/bonne-bonne)
--  [@phoebesu1025](https://github.com/phoebesu1025)
+-  [@bonne-bonne](https://github.com/bonne-bonne) - Array methods, DOM events
+-  [@phoebesu1025](https://github.com/phoebesu1025) - Function and string methods
+-  [@JordanMeijer](https://github.com/JordanMeijer/) - DOM-cat-gallery
+-  [@Tavares](https://github.com/T-Tavares) - Functions exercise
 
 ## Authors
 
