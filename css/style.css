@@ -2,6 +2,7 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   line-height: 1.5;
    font-family: 'Poppins';
 }
 
@@ -17,6 +18,10 @@
    --dark-grey: #727272;
    --selective-yellow: #ffb800;
    --milk: #fdfff5;
+}
+
+footer {
+   background-color: var(--black-feather);
 }
 
 #navbar {
@@ -48,6 +53,7 @@ body {
 }
 
 section {
+   height: 50svh;
    /* margin: min(1em, 1em, 2.5em); */
 }
 

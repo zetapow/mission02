@@ -24,9 +24,9 @@ What did you learn while building this project? What challenges did you face and
 
 ## Acknowledgements
 
--
--
--
+-  [@JordanMeijer](https://github.com/JordanMeijer/)
+-  [@bonne-bonne](https://github.com/bonne-bonne)
+-  [@phoebesu1025](https://github.com/phoebesu1025)
 
 ## Authors
 
