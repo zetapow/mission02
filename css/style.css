@@ -43,7 +43,7 @@ body {
    list-style: none;
 
    ul {
-      justify-content: ;
+      justify-content: center;
       color: var(--clr-primary);
       text-decoration: none;
       padding: 1.5rem;
@@ -84,8 +84,12 @@ img {
 
 /* Hero section */
 .hero {
+   background-image: url(../images/honeycomb.jpg);
+   background-size: cover;
+   background-color: rgb(255, 255, 255, 0.9);
+   background-blend-mode: lighten;
+
    color: var(--clr-dark);
-   background-color: var(--clr-text-light);
    padding: 10% 5%;
    text-align: justify;
 
@@ -102,6 +106,7 @@ img {
 
    p {
       margin-bottom: 4rem;
+      background-color: var(--clr-text-light);
    }
 }
 
@@ -204,8 +209,11 @@ form {
 }
 
 footer {
+   background-image: url(../images/honeycomb.jpg);
+   background-size: cover;
+   background-color: rgb(255, 255, 255, 0.7);
+   background-blend-mode: lighten;
    height: 10rem;
-   background-color: var(--clr-text-light);
    img {
       max-height: 10rem;
       border-radius: 50%;
