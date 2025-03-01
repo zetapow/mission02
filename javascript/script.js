@@ -76,6 +76,7 @@ const beeSpeciesNZ = [
 //    const beeInfo = document.createElement('div');
 //    beeInfo.innerHTML = `
 //       <h3>${bee.commonName}</h3>
+//       <img src='${bee.src}'></img>
 //       <p>${bee.fact}</p>
 //       <p>${bee.pun}</p>
 //    `;
@@ -202,4 +203,72 @@ document.querySelectorAll(elements.anchor).forEach((anchor) => {
    });
 });
 
-/* ----------  Buzz off mouse ---------------------*/
+/* ----------  Bee gallery ---------------------*/
+
+const gallery = [
+   { src: 'images/bee1.jpeg', name: 'Bee 1' },
+   { src: 'images/bee2.jpeg', name: 'Bee 2' },
+   { src: 'images/bee3.jpeg', name: 'Bee 3' },
+   { src: 'images/bee4.jpeg', name: 'Bee 4' },
+   { src: 'images/bee5.jpeg', name: 'Bee 5' },
+   { src: 'images/bee6.jpeg', name: 'Bee 6' },
+   { src: 'images/bee7.jpeg', name: 'Bee 7' },
+   { src: 'images/bee9.jpeg', name: 'Bee 9' },
+   { src: 'images/bee10.jpeg', name: 'Bee 10' },
+   { src: 'images/bee11.jpeg', name: 'Bee 11' },
+];
+let currentIndex = 0;
+
+// get elements by id for selected-Image, image-name, left-arrow and right arrow
+// get elements by query selector all for .thumbnail
+const selectedImage = document.querySelector('#selected-image');
+const imageName = document.querySelector('#image-name');
+const leftArrow = document.querySelector('#left-arrow');
+const rightArrow = document.querySelector('#right-arrow');
+const thumbnails = document.querySelectorAll('.thumbnail');
+
+// to update the selected image and the displayed image name
+function updateGallery() {
+   selectedImage.src = gallery[currentIndex].src;
+   imageName.textContent = gallery[currentIndex].name;
+}
+
+// to change current index to the next one
+// if at end of gallery, start from begining again
+// call update gallery
+function nextImage(event) {
+   currentIndex++;
+   if (currentIndex === gallery.length) {
+      currentIndex = 0;
+   }
+   updateGallery();
+}
+
+// to change current index to the prevous one
+// if at begining of gallery, change to end
+// call update gallery
+function prevImage() {
+   currentIndex--;
+   if (currentIndex < 0) {
+      // currentIndex = gallery.length - 1;
+      currentIndex = gallery.indexOf(gallery.at(-1));
+   }
+   updateGallery();
+}
+
+// change current index to selected thumbnail index
+// call updateGallery
+function selectThumbnail(index) {
+   currentIndex = index;
+   updateGallery();
+}
+
+// add functions to elements by adding event listners or directly in the html
+rightArrow.addEventListener('click', nextImage);
+leftArrow.addEventListener('click', prevImage);
+thumbnails.forEach((thumbnail, index) => {
+   thumbnail.addEventListener('click', () => selectThumbnail(index));
+});
+// 3 second delay
+const ADVANCE_DELAY = 3000;
+setInterval(nextImage, ADVANCE_DELAY);

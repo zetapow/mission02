@@ -17,7 +17,7 @@
    <body>
       <header>
          <nav id="navbar">
-            <ul>
+            <ul class="nav-links">
                <li><a href="#about">About</a></li>
                <li><a href="#bees">Bees</a></li>
                <li><a href="#calculator">Calculator</a></li>
@@ -26,20 +26,23 @@
          </nav>
       </header>
       <main>
-         <section class="hero container">
+         <section class="hero container" id="about">
             <h1 id="hero-text">Un<span class="hero">bee</span>-lievable!</h1>
+            <p>
+               <span>Bees</span> are the unsung heroes of our planet. Without
+               them, our ecosystem would <span>bee</span> in a sticky situation.
+               They’re the ultimate <span>pollin-nation</span> builders,
+               ensuring flowers bloom and crops thrive, proving that teamwork
+               really does make the dream work. Their
+               <span>honey-do </span>list? Saving global food supplies one
+               <span>buzz</span> at a time! But if we ignore their declining
+               numbers, we might regret it.
+            </p>
+            <div class="hex-image">
+               <img src="images/honeycomb.avif" alt="" />
+            </div>
             <!-- <img id="follow-mouse" src="images/bee-fav.png" alt="bee" /> -->
             <!-- <button id="remove-bee">Buzz Off!</button> -->
-         </section>
-         <section id="about" class="container">
-            <span>Bees</span> are the unsung heroes of our planet. Without them,
-            our ecosystem would <span>bee</span> in a sticky situation. They’re
-            the ultimate <span>pollin-nation</span> builders, ensuring flowers
-            bloom and crops thrive, proving that teamwork really does make the
-            dream work. Their <span>honey-do </span>list? Saving global food
-            supplies one <span>buzz</span>
-            at a time! But if we ignore their declining numbers, we might regret
-            it.
          </section>
          <section id="bees" class="container">Bees</section>
 
@@ -47,8 +50,43 @@
             <h2>BEE calculator</h2>
             <h3>Basal Energy Expenditure</h3>
             <form action="#" method="get" class="bee-form">
+               <!-- Verified oldest people 122 (woman) and 116 (man) https://en.wikipedia.org/wiki/List_of_the_verified_oldest_people -->
                <fieldset>
-                  Sex:
+                  <legend>Required inputs</legend>
+                  <div class="">
+                     <label for="age">Age:</label>
+                     <input
+                        type="number"
+                        name="age"
+                        id="age"
+                        placeholder="25"
+                        min="5"
+                        max="120"
+                        required />
+                  </div>
+                  <div class="">
+                     <label for="height">Height (cm)</label>
+                     <input
+                        type="number"
+                        name="height"
+                        id="height"
+                        placeholder="180"
+                        min="20"
+                        required />
+                  </div>
+                  <div class="">
+                     <label for="weight">Weight (kg)</label>
+                     <input
+                        type="number"
+                        name="weight"
+                        id="weight"
+                        placeholder="80"
+                        min="5"
+                        required />
+                  </div>
+               </fieldset>
+               <fieldset>
+                  <legend>Gender:</legend>
                   <input
                      type="radio"
                      name="sex"
@@ -58,36 +96,20 @@
                   <label for="male">Male</label>
                   <input type="radio" name="sex" id="female" value="female" />
                   <label for="female">Female</label>
-                  <label for="age">Age:</label>
-                  <input
-                     type="number"
-                     name="age"
-                     id="age"
-                     placeholder="25"
-                     min="5"
-                     max="120"
-                     required />
                </fieldset>
-               <!-- Verified oldest people 122 (woman) and 116 (man) https://en.wikipedia.org/wiki/List_of_the_verified_oldest_people -->
 
-               <label for="height">Height (cm)</label>
-               <input
-                  type="number"
-                  name="height"
-                  id="height"
-                  placeholder="180"
-                  min="20"
-                  required />
-               <label for="weight">Weight (kg)</label>
-               <input
-                  type="number"
-                  name="weight"
-                  id="weight"
-                  placeholder="80"
-                  min="5"
-                  required />
-               <input type="button" value="calculate" name="calculate" />
-               <input type="button" value="reset" name="reset" />
+               <fieldset>
+                  <input
+                     type="button"
+                     value="calculate"
+                     name="calculate"
+                     class="button calc" />
+                  <input
+                     type="button"
+                     value="reset"
+                     name="reset"
+                     class="button reset" />
+               </fieldset>
 
                <h3>Result</h3>
                <b
@@ -97,7 +119,30 @@
             </form>
          </section>
          <section id="gallery" class="container">
-            <h2>Bee Gallery</h2>
+            <div class="gallery-container">
+               <h1>Bee Gallery</h1>
+               <div class="selected-image-container">
+                  <button class="arrow" id="left-arrow">&lt;</button>
+                  <img
+                     id="selected-image"
+                     src="images/bee1.jpeg"
+                     alt="Selected bee" />
+                  <button class="arrow" id="right-arrow">&gt;</button>
+               </div>
+               <p id="image-name">Bee 1</p>
+               <div class="thumbnail-container">
+                  <img class="thumbnail" src="images/bee1.jpeg" alt="Bee 1" />
+                  <img class="thumbnail" src="images/bee2.jpeg" alt="Bee 2" />
+                  <img class="thumbnail" src="images/bee3.jpeg" alt="Bee 3" />
+                  <img class="thumbnail" src="images/bee4.jpeg" alt="Bee 4" />
+                  <img class="thumbnail" src="images/bee5.jpeg" alt="Bee 5" />
+                  <img class="thumbnail" src="images/bee6.jpeg" alt="Bee 6" />
+                  <img class="thumbnail" src="images/bee7.jpeg" alt="Bee 7" />
+                  <img class="thumbnail" src="images/bee9.jpeg" alt="Bee 9" />
+                  <img class="thumbnail" src="images/bee10.jpeg" alt="Bee 10" />
+                  <img class="thumbnail" src="images/bee11.jpeg" alt="Bee 11" />
+               </div>
+            </div>
          </section>
       </main>
       <footer>
