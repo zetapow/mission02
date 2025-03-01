@@ -91,6 +91,7 @@ const elements = {
    calc: "input[value='calculate']",
    reset: "input[value='reset']",
    result: '#result',
+   anchor: "a[href^='#']",
 };
 /*  Assign DOM Elements to variables*/
 const getHeight = document.querySelector(elements.height);
@@ -189,5 +190,16 @@ const BeeCalc = {
    displayResult(){},
    resetForm(){}
 } */
+
+/* Smooth scrolling */
+document.querySelectorAll(elements.anchor).forEach((anchor) => {
+   anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+         behavior: 'smooth',
+      });
+   });
+});
 
 /* ----------  Buzz off mouse ---------------------*/

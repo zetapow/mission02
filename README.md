@@ -22,6 +22,7 @@ Develop a one-page personal website using HTML, CSS, and JavaScript to show an u
 -  [@phoebesu1025](https://github.com/phoebesu1025) - Function and string methods
 -  [@JordanMeijer](https://github.com/JordanMeijer/) - DOM-cat-gallery
 -  [@Tavares](https://github.com/T-Tavares) - Functions exercise
+-  [@Google](https://www.google.com/) - Everything else
 
 ## Authors
 
