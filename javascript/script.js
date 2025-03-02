@@ -136,7 +136,6 @@ function calcBee() {
 
    return (
       constants.base +
-      constants.base +
       constants.weight * weight +
       constants.height * height -
       constants.age * age
