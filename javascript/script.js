@@ -73,8 +73,8 @@ const beeSpeciesNZ = [
 ];
 
 // beeSpeciesNZ.forEach((bee) => {
-//    const beeInfo = document.createElement('div');
-//    beeInfo.innerHTML = `
+//    const beeElements = document.createElement('div');
+//    beeElements.innerHTML = `
 //       <h3>${bee.commonName}</h3>
 //       <img src='${bee.src}'></img>
 //       <p>${bee.fact}</p>
@@ -92,7 +92,7 @@ const elements = {
    calc: "input[value='calculate']",
    reset: "input[value='reset']",
    result: '#result',
-   anchor: "a[href^='#']",
+   // anchor: "a[href^='#']",
 };
 /*  Assign DOM Elements to variables*/
 const getHeight = document.querySelector(elements.height);
@@ -114,7 +114,14 @@ function calcBee() {
    const weight = parseFloat(getWeight.value);
 
    /* Validate inputs */
-   if (isNaN(age) || isNaN(height) || isNaN(weight)) {
+   if (
+      isNaN(age) ||
+      isNaN(height) ||
+      isNaN(weight) ||
+      age < 0 ||
+      height < 0 ||
+      weight < 0
+   ) {
       alert('Please enter valid numbers');
    }
 

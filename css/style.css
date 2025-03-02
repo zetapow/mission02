@@ -188,8 +188,8 @@ form {
 }
 
 #selected-image {
-   width: 66%;
-   height: auto;
+   width: auto;
+   height: 50%;
    margin: 0 20px;
    border: 2px solid var(--clr-primary);
    transition: 500ms;
@@ -232,6 +232,10 @@ footer {
       border-radius: 50%;
       padding: 1rem 1rem;
       cursor: pointer;
+   }
+
+   .selected-image-container {
+      justify-content: space-between;
    }
 
    #selected-image:hover {
