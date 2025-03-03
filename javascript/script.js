@@ -66,17 +66,7 @@ const BeeCalc = {
 } */
 
 /* ==================================================================*/
-
-/* Smooth scrolling */
-document.querySelectorAll(elements.anchor).forEach((anchor) => {
-   anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-         behavior: 'smooth',
-      });
-   });
-});
+/* ================= Handle galleries ===========================*/
 
 let currentIndex = 0;
 
