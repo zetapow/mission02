@@ -15,8 +15,13 @@ const elements = {
    beeThumbnails: '.bee-thumbnail',
    selectedBee: '#selected-bee',
    beeName: '#bee-name',
+   calc: "input[value='calculate']",
+   male: "input[value='male']",
+   female: "input[value='female']",
+   reset: "input[value='reset']",
    // anchor: "a[href^='#']",
 };
+
 /*  Assign DOM Elements to variables*/
 const getMale = document.querySelector(elements.male);
 const getFemale = document.querySelector(elements.female);
@@ -36,6 +41,7 @@ const nextBee = document.querySelector(elements.nextBee);
 const prevBee = document.querySelector(elements.prevBee);
 const beeThumbnails = document.querySelectorAll(elements.beeThumbnails);
 
+/*========================== Bee calculator ======================== */
 import { displayResult, resetForm } from './beeCalculator.js';
 
 /* Event listener for clicking calculate */
@@ -58,6 +64,8 @@ const BeeCalc = {
    displayResult(){},
    resetForm(){}
 } */
+
+/* ==================================================================*/
 
 /* Smooth scrolling */
 document.querySelectorAll(elements.anchor).forEach((anchor) => {
@@ -95,7 +103,6 @@ function nextImage(event) {
 function prevImage() {
    currentIndex--;
    if (currentIndex < 0) {
-      // currentIndex = gallery.length - 1;
       currentIndex = gallery.indexOf(gallery.at(-1));
    }
    updateGallery();
@@ -115,14 +122,15 @@ thumbnails.forEach((thumbnail, index) => {
    thumbnail.addEventListener('click', () => selectThumbnail(index));
 });
 
-/*
-// 3 second delay
+/* ============================================================= */
+/* ================In-case delay required  ==================== 
 const ADVANCE_DELAY = 3000;
 setInterval(nextImage, ADVANCE_DELAY);
 */
 
+/* ===================== Handle bee species =======================*/
+
 let beeIndex = 0;
-// to update the selected image and the displayed image name
 function updateBees() {
    const currentBee = beeSpecies[beeIndex];
    selectedBee.src = currentBee.src;
@@ -131,9 +139,6 @@ function updateBees() {
    document.getElementById('bee-pun').textContent = currentBee.pun;
 }
 
-// to change current index to the next one
-// if at end of gallery, start from begining again
-// call update gallery
 const nextBeeFun = () => {
    beeIndex++;
    if (beeIndex === beeSpecies.length) {
@@ -142,26 +147,18 @@ const nextBeeFun = () => {
    updateBees();
 };
 
-// to change current index to the prevous one
-// if at begining of gallery, change to end
-// call update gallery
 const prevBeeFun = () => {
    beeIndex--;
    if (beeIndex < 0) {
-      // currentIndex = gallery.length - 1;
       beeIndex = beeSpecies.length - 1;
    }
    updateBees();
 };
 
-// change current index to selected thumbnail index
-// call updateGallery
 function selectBee(index) {
    beeIndex = index;
    updateBees();
 }
-
-// add functions to elements by adding event listners or directly in the html
 nextBee.addEventListener('click', nextBeeFun);
 prevBee.addEventListener('click', prevBeeFun);
 beeThumbnails.forEach((beeThumbnail, index) => {
