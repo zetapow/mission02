@@ -9,7 +9,10 @@ const elements = {
    result: '#result',
 };
 
+/*=====  Name constants instead of magic numbers ==========*/
 const KCAL_TO_KJOULES = 4.184;
+const MAX_AGE = 120;
+const MIN_AGE = 5;
 const result = document.querySelector(elements.result);
 const getHeight = document.querySelector(elements.height);
 const getWeight = document.querySelector(elements.weight);
@@ -28,7 +31,8 @@ function calcBee() {
       isNaN(age) ||
       isNaN(height) ||
       isNaN(weight) ||
-      age < 0 ||
+      age < MIN_AGE ||
+      age > MAX_AGE ||
       height < 0 ||
       weight < 0
    ) {
