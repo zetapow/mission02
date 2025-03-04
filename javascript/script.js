@@ -4,7 +4,7 @@ import { beeSpecies } from './beeSpecies.js';
 /* ----------  Bee gallery ---------------------*/
 import { gallery } from './beeGallery.js';
 
-const elements = {
+export const elements = {
    selectedImage: document.querySelector('#selected-image'),
    imageName: document.querySelector('#image-name'),
    leftArrow: document.querySelector('#left-arrow'),
@@ -21,6 +21,8 @@ const elements = {
    reset: document.querySelector("input[value='reset']"),
    // anchor: document.querySelector("a[href^='#']"),
 };
+
+// export {elements}
 
 /*  Assign DOM Elements to variables*/
 const getMale = elements.male;

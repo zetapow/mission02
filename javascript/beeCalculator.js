@@ -1,20 +1,23 @@
-const elements = {
-   selectedImage: document.querySelector('#selected-image'),
-   imageName: document.querySelector('#image-name'),
-   leftArrow: document.querySelector('#left-arrow'),
-   rightArrow: document.querySelector('#right-arrow'),
-   thumbnails: document.querySelectorAll('.thumbnail'),
-   nextBee: document.querySelector('#next-bee'),
-   prevBee: document.querySelector('#prev-bee'),
-   beeThumbnails: document.querySelectorAll('.bee-thumbnail'),
-   selectedBee: document.querySelector('#selected-bee'),
-   beeName: document.querySelector('#bee-name'),
-   calc: document.querySelector("input[value='calculate']"),
-   male: document.querySelector("input[value='male']"),
-   female: document.querySelector("input[value='female']"),
-   reset: document.querySelector("input[value='reset']"),
-   // anchor: document.querySelector("a[href^='#']"),
-};
+import { elements } from './script.js';
+
+// const elements = require('./script.js');
+// const elements = {
+//    selectedImage: document.querySelector('#selected-image'),
+//    imageName: document.querySelector('#image-name'),
+//    leftArrow: document.querySelector('#left-arrow'),
+//    rightArrow: document.querySelector('#right-arrow'),
+//    thumbnails: document.querySelectorAll('.thumbnail'),
+//    nextBee: document.querySelector('#next-bee'),
+//    prevBee: document.querySelector('#prev-bee'),
+//    beeThumbnails: document.querySelectorAll('.bee-thumbnail'),
+//    selectedBee: document.querySelector('#selected-bee'),
+//    beeName: document.querySelector('#bee-name'),
+//    calc: document.querySelector("input[value='calculate']"),
+//    male: document.querySelector("input[value='male']"),
+//    female: document.querySelector("input[value='female']"),
+//    reset: document.querySelector("input[value='reset']"),
+//    // anchor: document.querySelector("a[href^='#']"),
+// };
 
 /*=====  Name constants instead of magic numbers ==========*/
 const KCAL_TO_KJOULES = 4.184;
