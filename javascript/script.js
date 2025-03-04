@@ -5,41 +5,42 @@ import { beeSpecies } from './beeSpecies.js';
 import { gallery } from './beeGallery.js';
 
 const elements = {
-   selectedImage: '#selected-image',
-   imageName: '#image-name',
-   leftArrow: '#left-arrow',
-   rightArrow: '#right-arrow',
-   thumbnails: '.thumbnail',
-   nextBee: '#next-bee',
-   prevBee: '#prev-bee',
-   beeThumbnails: '.bee-thumbnail',
-   selectedBee: '#selected-bee',
-   beeName: '#bee-name',
-   calc: "input[value='calculate']",
-   male: "input[value='male']",
-   female: "input[value='female']",
-   reset: "input[value='reset']",
-   // anchor: "a[href^='#']",
+   selectedImage: document.querySelector('#selected-image'),
+   imageName: document.querySelector('#image-name'),
+   leftArrow: document.querySelector('#left-arrow'),
+   rightArrow: document.querySelector('#right-arrow'),
+   thumbnails: document.querySelectorAll('.thumbnail'),
+   nextBee: document.querySelector('#next-bee'),
+   prevBee: document.querySelector('#prev-bee'),
+   beeThumbnails: document.querySelectorAll('.bee-thumbnail'),
+   selectedBee: document.querySelector('#selected-bee'),
+   beeName: document.querySelector('#bee-name'),
+   calc: document.querySelector("input[value='calculate']"),
+   male: document.querySelector("input[value='male']"),
+   female: document.querySelector("input[value='female']"),
+   reset: document.querySelector("input[value='reset']"),
+   // anchor: document.querySelector("a[href^='#']"),
 };
 
 /*  Assign DOM Elements to variables*/
-const getMale = document.querySelector(elements.male);
-const getFemale = document.querySelector(elements.female);
-const calc = document.querySelector(elements.calc);
-const reset = document.querySelector(elements.reset);
+const getMale = elements.male;
+const getFemale = elements.female;
+const calc = elements.calc;
+const reset = elements.reset;
 
 // get elements by id for selected-Image, image-name, left-arrow and right arrow
-// get elements by query selector all for .thumbnail
-const selectedImage = document.querySelector(elements.selectedImage);
-const imageName = document.querySelector(elements.imageName);
-const leftArrow = document.querySelector(elements.leftArrow);
-const rightArrow = document.querySelector(elements.rightArrow);
-const thumbnails = document.querySelectorAll(elements.thumbnails);
-const selectedBee = document.querySelector(elements.selectedBee);
-const beeName = document.querySelector(elements.beeName);
-const nextBee = document.querySelector(elements.nextBee);
-const prevBee = document.querySelector(elements.prevBee);
-const beeThumbnails = document.querySelectorAll(elements.beeThumbnails);
+const selectedImage = elements.selectedImage;
+const imageName = elements.imageName;
+const leftArrow = elements.leftArrow;
+const rightArrow = elements.rightArrow;
+const thumbnails = elements.thumbnails;
+
+/* For bee info gallery */
+const selectedBee = elements.selectedBee;
+const beeName = elements.beeName;
+const nextBee = elements.nextBee;
+const prevBee = elements.prevBee;
+const beeThumbnails = elements.beeThumbnails;
 
 /*========================== Bee calculator ======================== */
 import { displayResult, resetForm } from './beeCalculator.js';
@@ -75,8 +76,6 @@ function updateGallery() {
    selectedImage.src = gallery[currentIndex].src;
    imageName.textContent = gallery[currentIndex].name;
 }
-
-// to change current index to the next one
 // if at end of gallery, start from begining again
 // call update gallery
 function nextImage(event) {
@@ -87,7 +86,6 @@ function nextImage(event) {
    updateGallery();
 }
 
-// to change current index to the prevous one
 // if at begining of gallery, change to end
 // call update gallery
 function prevImage() {
@@ -98,7 +96,6 @@ function prevImage() {
    updateGallery();
 }
 
-// change current index to selected thumbnail index
 // call updateGallery
 function selectThumbnail(index) {
    currentIndex = index;

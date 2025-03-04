@@ -1,23 +1,30 @@
 const elements = {
-   height: "input[name='height']",
-   weight: "input[name='weight']",
-   age: "input[name='age']",
-   male: "input[value='male']",
-   female: "input[value='female']",
-   calc: "input[value='calculate']",
-   reset: "input[value='reset']",
-   result: '#result',
+   selectedImage: document.querySelector('#selected-image'),
+   imageName: document.querySelector('#image-name'),
+   leftArrow: document.querySelector('#left-arrow'),
+   rightArrow: document.querySelector('#right-arrow'),
+   thumbnails: document.querySelectorAll('.thumbnail'),
+   nextBee: document.querySelector('#next-bee'),
+   prevBee: document.querySelector('#prev-bee'),
+   beeThumbnails: document.querySelectorAll('.bee-thumbnail'),
+   selectedBee: document.querySelector('#selected-bee'),
+   beeName: document.querySelector('#bee-name'),
+   calc: document.querySelector("input[value='calculate']"),
+   male: document.querySelector("input[value='male']"),
+   female: document.querySelector("input[value='female']"),
+   reset: document.querySelector("input[value='reset']"),
+   // anchor: document.querySelector("a[href^='#']"),
 };
 
 /*=====  Name constants instead of magic numbers ==========*/
 const KCAL_TO_KJOULES = 4.184;
 const MAX_AGE = 120;
 const MIN_AGE = 5;
-const result = document.querySelector(elements.result);
-const getHeight = document.querySelector(elements.height);
-const getWeight = document.querySelector(elements.weight);
-const getAge = document.querySelector(elements.age);
-const getMale = document.querySelector(elements.male);
+const result = elements.result;
+const getHeight = elements.height;
+const getWeight = elements.weight;
+const getAge = elements.age;
+const getMale = elements.male;
 
 /* Based on Harris-Benedict Equation http://www-users.med.cornell.edu/~spon/picu/calc/beecalc.htm */
 function calcBee() {
