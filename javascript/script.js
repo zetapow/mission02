@@ -1,28 +1,11 @@
+import { elements } from './elements.js';
+import { displayResult, resetForm } from './beeCalculator.js';
+
 /* ----------- Bee species ----------------------*/
 import { beeSpecies } from './beeSpecies.js';
 
 /* ----------  Bee gallery ---------------------*/
 import { gallery } from './beeGallery.js';
-
-export const elements = {
-   selectedImage: document.querySelector('#selected-image'),
-   imageName: document.querySelector('#image-name'),
-   leftArrow: document.querySelector('#left-arrow'),
-   rightArrow: document.querySelector('#right-arrow'),
-   thumbnails: document.querySelectorAll('.thumbnail'),
-   nextBee: document.querySelector('#next-bee'),
-   prevBee: document.querySelector('#prev-bee'),
-   beeThumbnails: document.querySelectorAll('.bee-thumbnail'),
-   selectedBee: document.querySelector('#selected-bee'),
-   beeName: document.querySelector('#bee-name'),
-   calc: document.querySelector("input[value='calculate']"),
-   male: document.querySelector("input[value='male']"),
-   female: document.querySelector("input[value='female']"),
-   reset: document.querySelector("input[value='reset']"),
-   // anchor: document.querySelector("a[href^='#']"),
-};
-
-// export {elements}
 
 /*  Assign DOM Elements to variables*/
 const getMale = elements.male;
@@ -45,7 +28,7 @@ const prevBee = elements.prevBee;
 const beeThumbnails = elements.beeThumbnails;
 
 /*========================== Bee calculator ======================== */
-import { displayResult, resetForm } from './beeCalculator.js';
+// import { displayResult, resetForm } from './beeCalculator.js';
 
 /* Event listener for clicking calculate */
 calc.addEventListener('click', displayResult);
