@@ -1,5 +1,4 @@
 import { elements } from './elements.js';
-import { displayResult, resetForm } from './beeCalculator.js';
 
 /* ----------- Bee species ----------------------*/
 import { beeSpecies } from './beeSpecies.js';
@@ -28,7 +27,7 @@ const prevBee = elements.prevBee;
 const beeThumbnails = elements.beeThumbnails;
 
 /*========================== Bee calculator ======================== */
-// import { displayResult, resetForm } from './beeCalculator.js';
+import { displayResult, resetForm } from './beeCalculator.js';
 
 /* Event listener for clicking calculate */
 calc.addEventListener('click', displayResult);
@@ -55,7 +54,7 @@ const BeeCalc = {
 /* ================= Handle galleries ===========================*/
 
 let currentIndex = 0;
-
+const RESTART_INDEX = 0;
 // to update the selected image and the displayed image name
 function updateGallery() {
    selectedImage.src = gallery[currentIndex].src;
@@ -66,7 +65,7 @@ function updateGallery() {
 function nextImage(event) {
    currentIndex++;
    if (currentIndex === gallery.length) {
-      currentIndex = 0;
+      currentIndex = RESTART_INDEX;
    }
    updateGallery();
 }
@@ -76,7 +75,7 @@ function nextImage(event) {
 function prevImage() {
    currentIndex--;
    if (currentIndex < 0) {
-      currentIndex = gallery.indexOf(gallery.at(-1));
+      currentIndex = gallery.length - 1;
    }
    updateGallery();
 }
@@ -86,7 +85,6 @@ function selectThumbnail(index) {
    currentIndex = index;
    updateGallery();
 }
-
 // add functions to elements by adding event listners or directly in the html
 rightArrow.addEventListener('click', nextImage);
 leftArrow.addEventListener('click', prevImage);
@@ -107,14 +105,14 @@ function updateBees() {
    const currentBee = beeSpecies[beeIndex];
    selectedBee.src = currentBee.src;
    beeName.textContent = currentBee.commonName;
-   document.getElementById('bee-fact').textContent = currentBee.fact;
-   document.getElementById('bee-pun').textContent = currentBee.pun;
+   beeFact.textContent = currentBee.fact;
+   beePun.textContent = currentBee.pun;
 }
 
 const nextBeeFun = () => {
    beeIndex++;
    if (beeIndex === beeSpecies.length) {
-      beeIndex = 0;
+      beeIndex = RESTART_INDEX;
    }
    updateBees();
 };

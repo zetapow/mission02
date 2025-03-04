@@ -12,6 +12,10 @@ body {
    font-family: 'Poppins', sans-serif;
 }
 
+ul {
+   list-style: none;
+}
+
 /* Setting colour variables */
 :root {
    --clr-primary: #805711;
@@ -20,13 +24,6 @@ body {
    --clr-accent: #ffb800;
    --clr-text-light: #fdfff5;
    --rgb-white: 255, 255, 255;
-   /*
-   --australien: #cc9918;
-   --dark-black: #121212;
-   --med-black: #1b1b1b;
-   --black: #2a2a2a;
-   --dark-grey: #727272;
-   */
 }
 
 /* Nav bar styling */
@@ -74,15 +71,15 @@ img {
    height: auto;
    aspect-ratio: 16/9;
    object-fit: cover;
-   border-radius: 25%;
+   border-radius: 5%;
 }
 
 /* Skip first container (Hero section) */
 .container:not(:first-child) {
    background-color: var(--clr-light);
    border-radius: 5%;
-   padding: 5%;
-   margin: 2.5%;
+   padding: 10%;
+   margin: 10%;
 }
 
 /* Hero section */

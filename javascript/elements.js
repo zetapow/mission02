@@ -17,5 +17,6 @@ export const elements = {
    weight: document.querySelector('#weight'),
    height: document.querySelector('#height'),
    age: document.querySelector('#age'),
-   // anchor: document.querySelector("a[href^='#']"),
+   beeFact: document.querySelector('#bee-fact'),
+   beePun: document.querySelector('#bee-pun'),
 };

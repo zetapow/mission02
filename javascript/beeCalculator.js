@@ -10,7 +10,6 @@ const getWeight = elements.weight;
 const getAge = elements.age;
 const getMale = elements.male;
 
-/* Based on Harris-Benedict Equation http://www-users.med.cornell.edu/~spon/picu/calc/beecalc.htm */
 function calcBee() {
    /* Values required for calculation */
    const age = parseInt(getAge.value);
@@ -28,11 +27,13 @@ function calcBee() {
       weight < 0
    ) {
       alert('Please enter valid numbers');
+      return null;
    }
 
    const gender = getMale.checked ? 'male' : 'female';
 
    /* Calculate BEE based on gender */
+   /* Based on Harris-Benedict Equation http://www-users.med.cornell.edu/~spon/picu/calc/beecalc.htm */
    const CONSTANTS_GENDER = {
       male: { base: 66.5, weight: 13.75, height: 5.003, age: 6.775 },
       female: { base: 666.1, weight: 9.563, height: 1.85, age: 4.676 },
