@@ -17,6 +17,6 @@ export const elements = {
    weight: document.querySelector('#weight'),
    height: document.querySelector('#height'),
    age: document.querySelector('#age'),
-   beeFact: document.querySelector('#bee-fact'),
-   beePun: document.querySelector('#bee-pun'),
+   beeFact: document.getElementById('bee-fact'),
+   beePun: document.getElementById('bee-pun'),
 };

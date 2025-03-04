@@ -103,10 +103,13 @@ setInterval(nextImage, ADVANCE_DELAY);
 let beeIndex = 0;
 function updateBees() {
    const currentBee = beeSpecies[beeIndex];
+   const beeFactEl = document.getElementById('bee-fact');
+   const beePunEl = document.getElementById('bee-pun');
+
    selectedBee.src = currentBee.src;
    beeName.textContent = currentBee.commonName;
-   beeFact.textContent = currentBee.fact;
-   beePun.textContent = currentBee.pun;
+   beeFactEl.textContent = currentBee.fact;
+   beePunEl.textContent = currentBee.pun;
 }
 
 const nextBeeFun = () => {
